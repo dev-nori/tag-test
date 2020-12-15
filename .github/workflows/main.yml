@@ -1,0 +1,17 @@
+name: .NET Core
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'lv*.*.*' # Push events to matching lv*.*.*, i.e. lv1.0.0
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:	  
+    - uses: actions/checkout@v2
+    - name: Set output
+      run: ls -al
